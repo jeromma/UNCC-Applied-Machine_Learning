@@ -1,0 +1,73 @@
+output_dir_folder: predictions
+input_dir_folder: selected_data
+additional_method_name: -lstm
+
+data_name: cropharvest_Kenya_maize
+
+training:
+  max_epochs: 1000
+  batch_size: 256
+  emb_dim: 64
+  early_stop_args:
+    min_delta: 0.01
+    mode: min
+    patience: 5
+    verbose: True
+
+experiment:
+  runs: 1 #repetitions
+  val_size: 0.1
+  mlflow_runs_exp: True
+  preprocess:
+    fillnan: False
+    flatten: False
+    form: zscore
+
+  save_individually: False #if representations are saved individually -- only for feature based
+
+view_names: ["S2","S1","weather", "VI" , "DEM"]
+
+architecture:
+  encoders:
+    S1:
+      model_type: lstm
+      n_layers: 2
+      layer_size: 64
+      dropout: 0.2
+      batchnorm: False
+    S2:
+      model_type: lstm
+      n_layers: 2
+      layer_size: 64
+      dropout: 0.2
+      batchnorm: False
+    weather:
+      model_type: lstm
+      n_layers: 2
+      layer_size: 64
+      dropout: 0.2
+      batchnorm: False
+    VI:
+      model_type: lstm
+      n_layers: 2
+      layer_size: 64
+      dropout: 0.2
+      batchnorm: False
+    DEM:
+      model_type: mlp
+      n_layers: 1
+      layer_size: 64
+      dropout: 0.2
+      batchnorm: False
+  predictive_model:
+    n_layers: 1
+    layer_size: 64
+    dropout: 0.2
+    batchnorm: True
+
+method: #fusion method
+  feature: True
+  agg_args:
+    mode: concat
+    adaptive: False
+    features: False

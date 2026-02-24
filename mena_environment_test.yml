@@ -1,0 +1,34 @@
+name: mena_test
+channels:
+  - conda-forge
+dependencies:
+  - geopandas=0.9.0
+  - h5netcdf=1.0.0
+  - h5py>=3.1.0,!=3.7.0
+  - mlflow=1.27.0
+  - mvlearn=0.5.0
+  - netCDF4=1.5.8
+  - numpy=1.22.4
+  - pandas=1.4.2
+  - psutil=5.9.1
+  - pytorch::cpuonly
+  - pytorch::pytorch=1.11.0
+  - pytorch::torchaudio=0.11.0
+  - pytorch::torchtext=0.12.0
+  - pytorch::torchvision=0.12.0
+  - pytorch-lightning=1.6.4
+  - tensorboard=2.9.0
+  - tensorboard-data-server=0.6.1
+  - tensorboard-plugin-wit=1.8.1
+  - torchmetrics=0.9.1
+  - xarray=2022.3.0
+  - shapely<2.0
+  - setuptools<82
+  - notebook
+  - pip
+  - pip:
+      - numpy==1.22.4
+      - cca-zoo==1.12.7
+      - cropharvest==0.7.0
+      - multiviewdata==0.2.2
+prefix: C:\Users\m_jer\miniforge3\envs\mena_test

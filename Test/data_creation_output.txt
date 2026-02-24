@@ -1,0 +1,28 @@
+CREATING AND SAVING DATA FROM (Kenya, maize)
+Total training set  (3940, 12, 18)
+DATA FROM TESTING REGION=  0 Kenya_maize_2020_0_0
+Total data 7600 Data with labels 538
+DATA FROM TESTING REGION=  1 Kenya_maize_2020_1_0
+Total data 7878 Data with labels 360
+Total test set  (898, 12, 18)
+C:\Users\m_jer\OneDrive\Documents\MyPrograms\Applied Machine Learning\Project\Test\src\datasets\views_structure.py:12: RuntimeWarning: divide by zero encountered in long_scalars
+  if v % int(v) == 0:
+C:\Users\m_jer\OneDrive\Documents\MyPrograms\Applied Machine Learning\Project\Test\src\datasets\views_structure.py:12: RuntimeWarning: divide by zero encountered in longlong_scalars
+  if v % int(v) == 0:
+data stored in selected_data/cropharvest_Kenya_maize_test
+CREATING AND SAVING DATA FROM (Kenya, maize)
+Total training set  (3940, 12, 18)
+DATA FROM TESTING REGION=  0 Kenya_maize_2020_0_0
+Total data 7600 Data with labels 538
+DATA FROM TESTING REGION=  1 Kenya_maize_2020_1_0
+Total data 7878 Data with labels 360
+Total test set  (898, 12, 18)
+data stored in selected_data/cropharvest_Kenya_maize_test
+CREATING AND SAVING DATA FROM (Kenya, maize)
+Total training set  (3940, 12, 18)
+DATA FROM TESTING REGION=  0 Kenya_maize_2020_0_0
+Total data 7600 Data with labels 538
+DATA FROM TESTING REGION=  1 Kenya_maize_2020_1_0
+Total data 7878 Data with labels 360
+Total test set  (898, 12, 18)
+data stored in selected_data/cropharvest_Kenya_maize_test
