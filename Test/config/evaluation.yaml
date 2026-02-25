@@ -1,0 +1,8 @@
+output_dir_folder: predictions
+input_dir_folder: selected_data
+
+data_name: cropharvest_Kenya_maize
+
+methods_to_plot: null #consider all
+
+plot_runs: False
