@@ -3,7 +3,10 @@ Test/__pycache__/
 Test/data/
 Test/predictions/
 Test/selected_data/
+Test/src/__pycache__/
 Test/src/datasets/__pycache__/
+Test/src/metrics/__pycache__/
 Test/src/models/__pycache__/
 Test/src/models/single/__pycache__/
 Test/src/training/__pycache__/
+Test/src/visualizations/__pycache__/
