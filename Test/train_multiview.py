@@ -7,6 +7,7 @@ import gc
 from pathlib import Path
 import numpy as np
 import pandas as pd
+import torch
 from sklearn.utils import class_weight
 
 from src.training.utils import preprocess_views
@@ -54,7 +55,8 @@ def main_run(config_file):
     if "loss_args" not in config_file["training"]:
         config_file["training"]["loss_args"] = {}
     config_file["training"]["loss_args"]["name"] = "ce" if "name" not in config_file["training"]["loss_args"] else config_file["training"]["loss_args"]["name"]
-    train_data_target = views_tr["target"].astype(int).flatten()
+#    train_data_target = views_tr["target"].astype(int).flatten()
+    train_data_target = views_tr["target"].numpy().astype(int).flatten()
     config_file["training"]["loss_args"]["weight"]=class_weight.compute_class_weight(class_weight='balanced',classes= np.unique(train_data_target), y=train_data_target)
 
     method_name = assign_multifusion_name(config_file["training"],config_file["method"])

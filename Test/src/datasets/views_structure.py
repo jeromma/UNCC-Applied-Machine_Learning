@@ -1,6 +1,7 @@
 import copy, gc, sys, os , pickle
 import numpy as np
 import pandas as pd
+import torch
 import xarray as xray
 from pathlib import Path
 from typing import List, Union, Dict
@@ -407,7 +408,7 @@ class DataViews(object):
                 if all(view in V_ident for view in view_names): #check if data contain all the views
                     Idts_data.append(ident)
                     if self.supervised_tag:
-                        Y_data.append(data_["target"])
+                        Y_data.append(np.asarray(data_["target"]))
                     
                     if views_first:
                         data_ = self.get_item_selected_views(ident, view_names)["views"]
@@ -429,6 +430,8 @@ class DataViews(object):
             S_data = [S_data[v][indx_sampled] for v in range(len(view_names))]
             if self.supervised_tag:
                 Y_data = Y_data[indx_sampled]
+
+        Y_data = torch.from_numpy(Y_data) 
         
         if stack:
             print('stack set up, it is mandatory to be used only with same data dimension on all views')
@@ -565,7 +568,8 @@ def xray_to_dataviews(xray_data: xray.Dataset):
         dataviews.inverted_ident = dict(zip(all_possible_index, aux_xray.values.astype(int).tolist()))
     dataviews.train_mask_identifiers = dict(zip(all_possible_index, xray_data["train_mask"].values.astype(bool)))
     if dataviews.supervised_tag:
-        dataviews.identifiers_target = dict(zip(all_possible_index, xray_data["target"].values))
+#        dataviews.identifiers_target = dict(zip(all_possible_index, xray_data["target"].values))
+        dataviews.identifiers_target = dict(zip(all_possible_index, torch.from_numpy(xray_data["target"].values).to(torch.long)))
 
     for view_n in dataviews.view_names:
         #check nans cause of missingness

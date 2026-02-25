@@ -4,7 +4,7 @@ from typing import List, Union, Dict
 
 def check_discrete(v):
     v = np.squeeze(v)
-    if v % int(v) == 0:
+    if (int(v) == 0) or (v % int(v) == 0):
         return True
     else:
         return False
@@ -75,7 +75,8 @@ class DataViews_torch(torch.utils.data.Dataset):
         if type(x)==np.ndarray:
             return x.astype(dt)
         else: #torch
-            return x.to(dt)
+#            return x.to(dt)
+            return torch.from_numpy(x.numpy().astype(dt))
 
     def get_torch_dataloader(self, batch_size=32, **kwargs):
         return torch.utils.data.DataLoader(

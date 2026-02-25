@@ -190,7 +190,8 @@ class MVFusion(_BaseViewsLightning):
             raise Exception("views in batch should be a List or Dict")
 
         if type(self.criteria) == torch.nn.CrossEntropyLoss:
-            views_target = torch.squeeze(views_target)
+#            views_target = torch.squeeze(views_target)
+            views_target = torch.squeeze(views_target).to(torch.long)
         return views_dict, views_target
 
     def corr_criteria(self, zs_views: dict):
