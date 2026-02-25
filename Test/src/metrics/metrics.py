@@ -1,7 +1,7 @@
 import numpy as np
 
 from .metric_predictions import OverallAccuracy,F1Score,Precision,Recall,Kappa, ConfusionMatrix,AverageAccuracy,ROC_AUC
-from .metric_predictions import R2Score, MAPE, RMSE, MAE
+# from .metric_predictions import R2Score, MAPE, RMSE, MAE
 from .metric_predictions import get_n_data, get_n_true, get_n_pred
 from .metric_predictions import CatEntropy,LogP,P_max, P_true
 

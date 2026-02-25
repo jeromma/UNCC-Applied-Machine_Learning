@@ -141,7 +141,8 @@ class DataViews(object):
             if len(identifiers) == 0:
                 target_dic = self.identifiers_target
             else:
-                target_dic = {ident: self.identifiers_target[ident] for ident in identifiers}
+#                target_dic = {ident: self.identifiers_target[ident] for ident in identifiers}
+                target_dic = {ident: np.asarray(self.identifiers_target[ident]) for ident in identifiers}
             if matrix:
                 target_dic = np.asarray(list(target_dic.values()))
             return {"target":target_dic, "target_names":self.target_names, "identifiers": identifiers}
