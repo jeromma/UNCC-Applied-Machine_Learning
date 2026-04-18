@@ -2,7 +2,7 @@
 UNCC Spring 2026 ITCS-5154-051 Applied Machine Learning
 
 ## To set up environment to run code in this repository
-conda env create -f mena_environment_test.yml
+conda env create -f environment.yml
 
 ## Steps to set up and run code from Mena paper
 Run notebook "get_cropharvest_data.ipynb"
