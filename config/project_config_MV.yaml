@@ -1,4 +1,4 @@
-output_dir_folder: predictions
+output_dir_folder: MV_predictions
 input_dir_folder: selected_data
 additional_method_name: -lstm
 
@@ -15,7 +15,7 @@ training:
     verbose: True
 
 experiment:
-  runs: 1 #repetitions
+  runs: 20 #repetitions
   val_size: 0.1
   mlflow_runs_exp: True
   preprocess:

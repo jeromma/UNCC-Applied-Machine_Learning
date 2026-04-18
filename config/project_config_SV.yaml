@@ -1,0 +1,38 @@
+output_dir_folder: SV_predictions
+input_dir_folder: selected_data
+
+data_name: cropharvest_Kenya_maize
+
+training:
+  max_epochs: 1000
+  batch_size: 256
+  emb_dim: 64
+  early_stop_args:
+    min_delta: 0.01
+    mode: min
+    patience: 5
+    verbose: True
+experiment:
+  runs: 20
+  val_size: 0.1
+  mlflow_runs_exp: True
+  preprocess:
+    fillnan: False
+    flatten: False
+    form: zscore
+
+view_names: ["S2"]
+
+architecture:
+  encoders:
+    model_type: lstm
+    n_layers: 2
+    layer_size: 64
+    dropout: 0.2
+    batchnorm: False
+
+  predictive_model:
+    n_layers: 1
+    layer_size: 64
+    dropout: 0.2
+    batchnorm: True

@@ -67,14 +67,14 @@ if __name__ == "__main__":
 			if args.country == country or args.country =="all":
 				data_benchmark = bench_class[country]
 		
-			country = data_benchmark.task.test_identifier.split("_")[0]
-			crop = data_benchmark.task.target_label
-			print("CREATING AND SAVING DATA FROM (%s, %s)"%(country, crop))
+				country = data_benchmark.task.test_identifier.split("_")[0]
+				crop = data_benchmark.task.target_label
+				print("CREATING AND SAVING DATA FROM (%s, %s)"%(country, crop))
 
-			X_full_train, Y_full_train , X_full_test, Y_full_test = extracting_set(data_benchmark)
-			storage_set(args.out_dir, country, crop,
-				train_data=[X_full_train, Y_full_train],
-				test_data=[X_full_test, Y_full_test])
+				X_full_train, Y_full_train , X_full_test, Y_full_test = extracting_set(data_benchmark)
+				storage_set(args.out_dir, country, crop,
+					train_data=[X_full_train, Y_full_train],
+					test_data=[X_full_test, Y_full_test])
 
 	if args.country == "global" or args.country =="all":
 		country,crop = "global", "crop"

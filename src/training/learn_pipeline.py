@@ -66,7 +66,8 @@ def InputFusion_train(train_data: dict, val_data = None,
     folder_c = output_dir_folder+"/run-saves"
 
     if "weight" in loss_args:
-        n_labels = np.max(train_data["target"]) +1
+#        n_labels = np.max(train_data["target"]) +1
+        n_labels = torch.max(train_data["target"]) +1
         loss_args["weight"] = torch.tensor(loss_args["weight"],dtype=torch.float)
     else:
         n_labels = 1

@@ -10,7 +10,8 @@ from sklearn.preprocessing import OneHotEncoder, MultiLabelBinarizer
 
 def check_discrete(v):
     v = np.squeeze(v)
-    if v % int(v) == 0:
+#    if v % int(v) == 0:
+    if (int(v) == 0) or (v % int(v) == 0):
         return True
     else:
         return False
