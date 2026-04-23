@@ -2,7 +2,6 @@
 __pycache__/
 data/
 MV_predictions/
-predictions/
 selected_data/
 src/__pycache__/
 src/datasets/__pycache__/
