@@ -16,3 +16,6 @@ python evaluate_predictions.py -s config/evaluation_MV.yaml
 python train_singleview.py -s config/project_config_SV.yaml
 
 python evaluate_predictions.py -s config/evaluation_SV.yaml
+
+## The following files in this directory are copied (with possible modifications) from github.com/fmenat/ optimal-multiview-crop-classifier.git
+data_creation.py, evaluate_predictions.py, train_multiview.py, train_singleview.py, utils.py (required by data_creation.py)
