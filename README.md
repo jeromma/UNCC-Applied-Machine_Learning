@@ -4,7 +4,7 @@ UNCC Spring 2026 ITCS-5154-051 Applied Machine Learning
 ## To set up environment to run code in this repository
 conda env create -f environment.yml
 
-## Steps to set up and run base code (from Mena paper)
+## Steps to set up and run base code (from github.com/fmenat/ optimal-multiview-crop-classifier.git)
 Run notebook "get_cropharvest_data.ipynb"
 
 python data_creation.py -d data -c kenya -o selected_data
