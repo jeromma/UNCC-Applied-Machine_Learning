@@ -19,3 +19,11 @@ python evaluate_predictions.py -s config/evaluation_SV.yaml
 
 ## The following files in this directory are copied (with possible modifications) from github.com/fmenat/optimal-multiview-crop-classifier.git
 data_creation.py, evaluate_predictions.py, train_multiview.py, train_singleview.py, utils.py (required by data_creation.py)
+
+## Notebooks created for this project
+|Notebook name|Comments|
+|---|---|
+|00_test_project_run_nonorm.ipynb|Additional experiment without normalizing input data|
+|01_test_project_run_lr.ipynb|Additional experiment with smaller learning rate (1e-4)|
+|02_test_project_nonorm_run_lr_ipynb|Additional experiment combining nonorm and lr=1e-4|
+|get_cropharvest_data.ipynb|Load cropharvest benchmark data
