@@ -26,4 +26,6 @@ data_creation.py, evaluate_predictions.py, train_multiview.py, train_singleview.
 |00_test_project_run_nonorm.ipynb|Additional experiment without normalizing input data|
 |01_test_project_run_lr.ipynb|Additional experiment with smaller learning rate (1e-4)|
 |02_test_project_nonorm_run_lr_ipynb|Additional experiment combining nonorm and lr=1e-4|
-|get_cropharvest_data.ipynb|Load cropharvest benchmark data
+|get_cropharvest_data.ipynb|Load cropharvest benchmark datasets (based on https://github.com/nasaharvest/cropharvest/blob/main/demo.ipynb)|
+|map of Kenya.ipynb|Plot map of Kenya with Busia County in red|
+|project_run.ipynb|Main project code|
